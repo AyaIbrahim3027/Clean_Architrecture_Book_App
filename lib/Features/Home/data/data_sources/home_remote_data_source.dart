@@ -1,6 +1,9 @@
 import 'package:clean_architrecture_book_app/Features/home/data/models/book_model/book_model.dart';
 import 'package:clean_architrecture_book_app/Features/home/domain/entities/book_entity.dart';
+import 'package:clean_architrecture_book_app/constants.dart';
 import 'package:clean_architrecture_book_app/core/utils/api_service.dart';
+
+import '../../../../core/utils/functions/save_books.dart';
 
 abstract class HomeRemoteDataSource{
   Future<List<BookEntity>> fetchFeaturedBooks();
@@ -20,6 +23,9 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource{
         'volumes?Filtering=free-ebooks&q=programming');
 
     List<BookEntity> books = getBooksList(data);
+
+    saveBooksData(books , kFeaturedBox);
+
     return books;
   }
 
