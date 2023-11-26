@@ -37,6 +37,7 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource{
         'volumes?Filtering=free-ebooks&Sorting=newest&q=programming');
 
     List<BookEntity> books = getBooksList(data);
+    saveBooksData(books , kNewestBox);
     return books;
   }
 
