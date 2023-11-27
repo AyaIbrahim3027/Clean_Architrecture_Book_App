@@ -9,9 +9,8 @@ abstract class Failure {
 class ServerFailure extends Failure {
   ServerFailure(super.message);
 
-  factory ServerFailure.fromDioError(DioError e ){
-    switch (e.type){
-
+  factory ServerFailure.fromDiorError(DioError e) {
+    switch (e.type) {
       case DioErrorType.connectTimeout:
         return ServerFailure('Connection timeout with api server');
       case DioErrorType.sendTimeout:
@@ -25,7 +24,6 @@ class ServerFailure extends Failure {
         return ServerFailure('Request to ApiServer was canceld');
       case DioErrorType.other:
         return ServerFailure('Opps There was an Error, Please try again');
-
     }
   }
 
@@ -41,5 +39,3 @@ class ServerFailure extends Failure {
     }
   }
 }
-// class CacheFailure extends Failure {}
-// class NetworkFailure extends Failure {}

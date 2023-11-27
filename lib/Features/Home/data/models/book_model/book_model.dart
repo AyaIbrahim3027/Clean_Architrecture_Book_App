@@ -1,4 +1,5 @@
-import '../../../domain/entities/book_entity.dart';
+import 'package:clean_architrecture_book_app/Features/home/domain/entities/book_entity.dart';
+
 import 'access_info.dart';
 import 'sale_info.dart';
 import 'search_info.dart';
